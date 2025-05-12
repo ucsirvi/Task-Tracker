@@ -21,7 +21,8 @@ const ProjectDetail = () => {
       if (!token) {
         throw new Error('No authentication token found');
       }
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${API_URL}/projects/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
